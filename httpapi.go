@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package distlock
 
 import (
+	"encoding/json"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -38,13 +39,13 @@ func (h *httpKVAPI) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		if _, ok := h.store.Lookup(key); ok {
 			http.Error(w, "Failed to acquire lock", http.StatusBadRequest)
 		} else {
-			h.store.Propose(key, strconv.FormatInt(time.Now().Unix(), 10), "store")
+			h.store.Propose(key, strconv.FormatInt(time.Now().Unix(), 10), "600", "store")
 			w.WriteHeader(http.StatusNoContent)
 		}
 
 	case r.Method == "rel":
 		if _, ok := h.store.Lookup(key); ok {
-			h.store.Propose(key, "", "del")
+			h.store.Propose(key, "", "", "del")
 			w.WriteHeader(http.StatusOK)
 		}
 
@@ -56,14 +57,15 @@ func (h *httpKVAPI) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		h.store.Propose(key, string(v), "store")
+		h.store.Propose(key, string(v), "600", "store")
 
 		// Optimistic-- no waiting for ack from raft. Value is not yet
 		// committed so a subsequent GET on the key may return old value
 		w.WriteHeader(http.StatusNoContent)
 	case r.Method == "GET":
 		if v, ok := h.store.Lookup(key); ok {
-			w.Write([]byte(v))
+			value, _ := json.Marshal(v)
+			w.Write([]byte(value))
 		} else {
 			http.Error(w, "Failed to GET", http.StatusNotFound)
 		}

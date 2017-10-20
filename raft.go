@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package distlock
 
 import (
 	"fmt"
@@ -105,33 +105,52 @@ func newRaftNode(id int, peers []string, join bool, proposeC chan string,
 
 	}
 	go rc.startRaft()
-	go rc.TTLRoutine()
+	go rc.ttlRoutine()
 	rc.kvStore = newKVStore(<-rc.snapshotterReady, proposeC, commitC, errorC)
 
-	fmt.Println("before new kv store")
 	rc.getSnapshot = func() ([]byte, error) { return rc.kvStore.getSnapshot() }
-	fmt.Println("after new kv store")
 	return errorC, rc
 }
 
+func (rc *raftNode) Lock(key string) (err error) {
+	ttl := 60
+	return rc.LockWithTTL(key, ttl)
+}
+
+func (rc *raftNode) LockWithTTL(key string, ttl int) (err error) {
+
+	if _, ok := rc.kvStore.Lookup(key); ok {
+		err = fmt.Errorf("fail to acquire lock %s", key)
+		return
+	} else {
+		rc.kvStore.Propose(key, strconv.FormatInt(time.Now().Unix(), 10), strconv.FormatInt(int64(ttl), 10), "store")
+		return
+	}
+
+	return
+}
+
+func (rc *raftNode) Unlock(key string) (err error) {
+	if _, ok := rc.kvStore.Lookup(key); ok {
+		rc.kvStore.Propose(key, "", "", "del")
+		return
+	} else {
+		err = fmt.Errorf("fail to release lock %s, error:%s", key, err.Error())
+		return
+	}
+	return
+}
+
 // 用来定期删除过期的值
-func (rc *raftNode) TTLRoutine() {
+func (rc *raftNode) ttlRoutine() {
 	ticker := time.NewTicker(time.Millisecond * 2000)
 	defer ticker.Stop()
 
 	for {
 		select {
-		// case err := <-rc.transport.ErrorC:
-		// 	rc.writeError(err)
-		// 	return
-
-		// case <-rc.stopc:
-		// 	rc.stop()
-		// 	return
-
 		case now := <-ticker.C:
 			if rc.node.Status().SoftState.RaftState == raft.StateLeader {
-				fmt.Printf("%d: leader is %d\n", now.Unix(), rc.node.Status().ID)
+				fmt.Printf("%s start to check ttl\n", now.String())
 				rc.checkTTL(now)
 			}
 		}
@@ -142,13 +161,14 @@ func (rc *raftNode) checkTTL(now time.Time) {
 	rc.kvStore.mu.Lock()
 	defer rc.kvStore.mu.Unlock()
 	for k, v := range rc.kvStore.kvStore {
-		last, err := strconv.Atoi(v)
+		last, err := strconv.Atoi(v.Val)
 		if err != nil {
 			log.Printf("invalid timestamp %s", v)
 			continue
 		}
-		if now.Unix()-int64(last) > int64(20) {
-			rc.kvStore.Propose(k, "", "del")
+		ttl, err := strconv.Atoi(v.TTL)
+		if now.Unix()-int64(last) > int64(ttl) {
+			rc.kvStore.Propose(k, "", "", "del")
 		}
 	}
 }
