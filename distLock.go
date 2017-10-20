@@ -12,21 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package distlock
 
 import (
-	"flag"
 	"strings"
 
 	"github.com/coreos/etcd/raft/raftpb"
 )
 
-func main() {
-	cluster := flag.String("cluster", "http://127.0.0.1:9021", "comma separated cluster peers")
-	id := flag.Int("id", 1, "node ID")
-	kvport := flag.Int("port", 9121, "key-value server port")
-	join := flag.Bool("join", false, "join an existing cluster")
-	flag.Parse()
+type DistLock struct {
+	rc *raftNode
+}
+
+func (dl *DistLock) Lock(key string) error {
+
+	return dl.rc.Lock(key)
+}
+
+func (dl *DistLock) LockWithTTL(key string, ttl int) error {
+
+	return dl.rc.LockWithTTL(key, ttl)
+}
+
+func NewDistLock(id, port int, cluster string, join bool) {
 
 	proposeC := make(chan string)
 	defer close(proposeC)
@@ -35,8 +43,8 @@ func main() {
 
 	// raft provides a commit stream for the proposals from the http api
 
-	errorC, rc := newRaftNode(*id, strings.Split(*cluster, ","), *join, proposeC, confChangeC)
+	errorC, rc := newRaftNode(id, strings.Split(cluster, ","), join, proposeC, confChangeC)
 
 	// the key-value http handler will propose updates to raft
-	serveHttpKVAPI(rc.kvStore, *kvport, confChangeC, errorC)
+	serveHttpKVAPI(rc.kvStore, port, confChangeC, errorC)
 }

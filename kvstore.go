@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package main
+package distlock
 
 import (
 	"bytes"
 	"encoding/gob"
 	"encoding/json"
-	"fmt"
 	"log"
 	"sync"
 
@@ -29,46 +28,43 @@ import (
 type kvstore struct {
 	proposeC    chan<- string // channel for proposing updates
 	mu          sync.RWMutex
-	kvStore     map[string]string // current committed key-value pairs
+	kvStore     map[string]kv // current committed key-value pairs
 	snapshotter *snap.Snapshotter
 }
 
 type kv struct {
 	Key string
 	Val string
+	TTL string
 	Op  string
 }
 
 func newKVStore(snapshotter *snap.Snapshotter, proposeC chan string, commitC chan *string, errorC chan error) *kvstore {
-	s := &kvstore{proposeC: proposeC, kvStore: make(map[string]string), snapshotter: snapshotter}
+	s := &kvstore{proposeC: proposeC, kvStore: make(map[string]kv), snapshotter: snapshotter}
 	// replay log into key-value map
-	fmt.Println("before read commits")
 	s.readCommits(commitC, errorC)
-	fmt.Println("after read commits")
 	// read commits from raft into kvStore map until error
 	go s.readCommits(commitC, errorC)
 	return s
 }
 
-func (s *kvstore) Lookup(key string) (string, bool) {
+func (s *kvstore) Lookup(key string) (kv, bool) {
 	s.mu.RLock()
 	v, ok := s.kvStore[key]
 	s.mu.RUnlock()
 	return v, ok
 }
 
-func (s *kvstore) Propose(k string, v string, op string) {
+func (s *kvstore) Propose(k string, v string, ttl string, op string) {
 	var buf bytes.Buffer
-	if err := gob.NewEncoder(&buf).Encode(kv{k, v, op}); err != nil {
+	if err := gob.NewEncoder(&buf).Encode(kv{k, v, ttl, op}); err != nil {
 		log.Fatal(err)
 	}
 	s.proposeC <- buf.String()
 }
 
 func (s *kvstore) readCommits(commitC <-chan *string, errorC <-chan error) {
-	fmt.Println("enter read commits")
 	for data := range commitC {
-		fmt.Println("before data == nil")
 		if data == nil {
 			// done replaying log; new data incoming
 			// OR signaled to load snapshot
@@ -85,7 +81,6 @@ func (s *kvstore) readCommits(commitC <-chan *string, errorC <-chan error) {
 			}
 			continue
 		}
-		fmt.Println("after data == nil")
 		var dataKv kv
 		dec := gob.NewDecoder(bytes.NewBufferString(*data))
 		if err := dec.Decode(&dataKv); err != nil {
@@ -95,7 +90,7 @@ func (s *kvstore) readCommits(commitC <-chan *string, errorC <-chan error) {
 		if dataKv.Op == "del" {
 			delete(s.kvStore, dataKv.Key)
 		} else if dataKv.Op == "store" {
-			s.kvStore[dataKv.Key] = dataKv.Val
+			s.kvStore[dataKv.Key] = dataKv
 		} else if dataKv.Op != "" {
 			log.Fatalf("raftexample: could not recgnize operation %s", dataKv.Op)
 		}
@@ -113,7 +108,7 @@ func (s *kvstore) getSnapshot() ([]byte, error) {
 }
 
 func (s *kvstore) recoverFromSnapshot(snapshot []byte) error {
-	var store map[string]string
+	var store map[string]kv
 	if err := json.Unmarshal(snapshot, &store); err != nil {
 		return err
 	}
