@@ -107,7 +107,7 @@ func newRaftNode(id int, peers []string, join bool, proposeC chan string,
 	go rc.startRaft()
 	go rc.ttlRoutine()
 	rc.kvStore = newKVStore(<-rc.snapshotterReady, proposeC, commitC, errorC)
-
+	fmt.Println("new >>>>>", rc.kvStore)
 	rc.getSnapshot = func() ([]byte, error) { return rc.kvStore.getSnapshot() }
 	return errorC, rc
 }
@@ -118,7 +118,10 @@ func (rc *raftNode) Lock(key string) (err error) {
 }
 
 func (rc *raftNode) LockWithTTL(key string, ttl int) (err error) {
-
+	if rc == nil || rc.kvStore == nil {
+		err = fmt.Errorf("unhealthy cluster")
+		return
+	}
 	if _, ok := rc.kvStore.Lookup(key); ok {
 		err = fmt.Errorf("fail to acquire lock %s", key)
 		return
@@ -131,6 +134,10 @@ func (rc *raftNode) LockWithTTL(key string, ttl int) (err error) {
 }
 
 func (rc *raftNode) Unlock(key string) (err error) {
+	if rc == nil || rc.kvStore == nil {
+		err = fmt.Errorf("unhealthy cluster")
+		return
+	}
 	if _, ok := rc.kvStore.Lookup(key); ok {
 		rc.kvStore.Propose(key, "", "", "del")
 		return
