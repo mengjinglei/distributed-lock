@@ -58,10 +58,19 @@ func (sl *DistLock) Stop() {
 	close(sl.confChangeC)
 }
 
-func NewDistLock() *DistLock {
+func NewDistLock(id, port int, cluster string, join bool) *DistLock {
 
-	return &DistLock{
+	dl := &DistLock{
 		proposeC:    make(chan string),
 		confChangeC: make(chan raftpb.ConfChange),
 	}
+
+	go func() {
+		errorC, rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
+		dl.rc = rc
+		// the key-value http handler will propose updates to raft
+		serveHttpKVAPI(rc.kvStore, port, dl.confChangeC, errorC)
+	}()
+
+	return dl
 }

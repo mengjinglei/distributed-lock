@@ -16,30 +16,28 @@ func main() {
 	join := flag.Bool("join", false, "join an existing cluster")
 	flag.Parse()
 
-	lock := distLock.NewDistLock()
-	go lock.Run(*id, *kvport, *cluster, *join)
+	lock := distLock.NewDistLock(*id, *kvport, *cluster, *join)
 	time.Sleep(time.Second * 5)
 	key := "my-lock"
 	for {
 		r := rand.Intn(10) + 1
 		ticker := time.NewTicker(time.Second * time.Duration(r))
-		fmt.Println("=================")
 		select {
 		case now := <-ticker.C:
 			if r%1 == 0 {
 				err := lock.LockWithTTL(key, r)
 				if err != nil {
-					fmt.Printf(">>>>> lock fail  %s, error: %s, time: %d, ttl: %d", key, err.Error(), now.Unix(), r)
+					fmt.Printf(">>>>> lock fail  %s, error: %s, time: %d, ttl: %d, id: %d\n", key, err.Error(), now.Unix(), r, id)
 					continue
 				}
-				fmt.Printf(">>>>> lock success  %s, time: %d, ttl: %d", key, now.Unix(), r)
+				fmt.Printf(">>>>> lock success  %s, time: %d, ttl: %d, id: %d\n", key, now.Unix(), r, id)
 			} else {
 				err := lock.Unlock(key)
 				if err != nil {
-					fmt.Printf(">>>>> unlock fail  %s, error: %s, time: %d, ttl: %d", key, err.Error(), now.Unix(), r)
+					fmt.Printf(">>>>> unlock fail  %s, error: %s, time: %d, ttl: %d, id: %d\n", key, err.Error(), now.Unix(), r, id)
 					continue
 				}
-				fmt.Printf(">>>>> unlock success  %s, time: %d, ttl: %d", key, now.Unix(), r)
+				fmt.Printf(">>>>> unlock success  %s, time: %d, ttl: %d, id: %d\n", key, now.Unix(), r, id)
 			}
 
 		}
