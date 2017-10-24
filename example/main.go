@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"math/rand"
 	"time"
+
+	log "github.com/Sirupsen/logrus"
 
 	distLock "github.com/mengjinglei/distributed-lock"
 )
@@ -27,17 +28,17 @@ func main() {
 			if r%1 == 0 {
 				err := lock.LockWithTTL(key, r)
 				if err != nil {
-					fmt.Printf(">>>>> lock fail  %s, error: %s, time: %d, ttl: %d, id: %d\n", key, err.Error(), now.Unix(), r, id)
+					log.Printf("lock fail  %s, error: %s, time: %d, ttl: %d, id: %d\n", key, err.Error(), now.Unix(), r, id)
 					continue
 				}
-				fmt.Printf(">>>>> lock success  %s, time: %d, ttl: %d, id: %d\n", key, now.Unix(), r, id)
+				log.Printf("lock success  %s, time: %d, ttl: %d, id: %d\n", key, now.Unix(), r, id)
 			} else {
 				err := lock.Unlock(key)
 				if err != nil {
-					fmt.Printf(">>>>> unlock fail  %s, error: %s, time: %d, ttl: %d, id: %d\n", key, err.Error(), now.Unix(), r, id)
+					log.Printf("unlock fail  %s, error: %s, time: %d, ttl: %d, id: %d\n", key, err.Error(), now.Unix(), r, id)
 					continue
 				}
-				fmt.Printf(">>>>> unlock success  %s, time: %d, ttl: %d, id: %d\n", key, now.Unix(), r, id)
+				log.Printf("unlock success  %s, time: %d, ttl: %d, id: %d\n", key, now.Unix(), r, id)
 			}
 
 		}

@@ -16,13 +16,14 @@ package distlock
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 	"time"
 
 	"net/http"
 	"net/url"
+
+	log "github.com/Sirupsen/logrus"
 
 	"github.com/coreos/etcd/etcdserver/stats"
 	"github.com/coreos/etcd/pkg/fileutil"
@@ -156,7 +157,7 @@ func (rc *raftNode) ttlRoutine() {
 		select {
 		case now := <-ticker.C:
 			if rc.node.Status().SoftState.RaftState == raft.StateLeader {
-				fmt.Printf("%s start to check ttl\n", now.String())
+				log.Debugf("%s start to check ttl\n", now.String())
 				rc.checkTTL(now)
 			}
 		}
@@ -169,7 +170,7 @@ func (rc *raftNode) checkTTL(now time.Time) {
 	for k, v := range rc.kvStore.kvStore {
 		last, err := strconv.Atoi(v.Val)
 		if err != nil {
-			log.Printf("invalid timestamp %s", v)
+			log.Errorf("invalid timestamp %s", v)
 			continue
 		}
 		ttl, err := strconv.Atoi(v.TTL)
