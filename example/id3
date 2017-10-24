@@ -1,0 +1,1304 @@
+nohup: ignoring input
+2017-10-20 17:31:17.786507 I | replaying WAL of member 3
+2017-10-20 17:31:17.786627 I | loading WAL at term 0 and index 0
+raft2017/10/20 17:31:17 INFO: 3 became follower at term 99
+raft2017/10/20 17:31:17 INFO: newRaft 3 [peers: [], term: 99, commit: 75, applied: 0, lastindex: 76, lastterm: 99]
+2017-10-20 17:31:17.787060 I | rafthttp: starting peer 1...
+2017-10-20 17:31:17.787093 I | rafthttp: started HTTP pipelining with peer 1
+2017-10-20 17:31:17.788761 I | rafthttp: started streaming with peer 1 (writer)
+2017-10-20 17:31:17.791110 I | rafthttp: started streaming with peer 1 (writer)
+2017-10-20 17:31:17.791262 I | rafthttp: started peer 1
+2017-10-20 17:31:17.791301 I | rafthttp: added peer 1
+2017-10-20 17:31:17.791327 I | rafthttp: starting peer 2...
+2017-10-20 17:31:17.791347 I | rafthttp: started HTTP pipelining with peer 2
+2017-10-20 17:31:17.792568 I | rafthttp: started streaming with peer 1 (stream Message reader)
+2017-10-20 17:31:17.793375 I | rafthttp: started streaming with peer 1 (stream MsgApp v2 reader)
+2017-10-20 17:31:17.794440 I | rafthttp: peer 1 became active
+2017-10-20 17:31:17.794478 I | rafthttp: established a TCP streaming connection with peer 1 (stream Message reader)
+2017-10-20 17:31:17.794570 I | rafthttp: established a TCP streaming connection with peer 1 (stream MsgApp v2 reader)
+2017-10-20 17:31:17.795331 I | rafthttp: started streaming with peer 2 (writer)
+2017-10-20 17:31:17.797159 I | rafthttp: started streaming with peer 2 (writer)
+2017-10-20 17:31:17.803213 I | rafthttp: started peer 2
+2017-10-20 17:31:17.803264 I | rafthttp: added peer 2
+2017-10-20 17:31:17.804495 I | rafthttp: started streaming with peer 2 (stream Message reader)
+2017-10-20 17:31:17.805760 I | rafthttp: started streaming with peer 2 (stream MsgApp v2 reader)
+2017-10-20 17:31:17.810359 I | rafthttp: peer 2 became active
+2017-10-20 17:31:17.810373 I | rafthttp: established a TCP streaming connection with peer 2 (stream MsgApp v2 reader)
+2017-10-20 17:31:17.810436 I | rafthttp: established a TCP streaming connection with peer 2 (stream Message reader)
+raft2017/10/20 17:31:17 INFO: 3 [term: 99] received a MsgHeartbeat message with higher term from 1 [term: 109]
+raft2017/10/20 17:31:17 INFO: 3 became follower at term 109
+raft2017/10/20 17:31:17 INFO: raft.node: 3 elected leader 1 at term 109
+new >>>>> &{0xc420064a20 {{0 0} 0 0 0 0} map[my-lock:{my-lock 1508491813 10 store}] 0xc420015ef0}
+2017-10-20 17:31:17.857527 I | rafthttp: established a TCP streaming connection with peer 1 (stream Message writer)
+2017-10-20 17:31:17.857886 I | rafthttp: established a TCP streaming connection with peer 1 (stream MsgApp v2 writer)
+2017-10-20 17:31:17.901536 I | rafthttp: established a TCP streaming connection with peer 2 (stream Message writer)
+2017-10-20 17:31:17.901579 I | rafthttp: established a TCP streaming connection with peer 2 (stream MsgApp v2 writer)
+=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491884, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508491892, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491900, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491910, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491912, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491921, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491927, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491928, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508491935, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491936, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491941, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508491943, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491946, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491956, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508491965, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491970, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491972, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491978, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508491986, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508491993, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508491999, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492006, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492015, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492024, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508492032, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492040, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492048, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508492057, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492058, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492064, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492066, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492075, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492083, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492085, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508492095, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492102, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508492110, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492112, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492118, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508492125, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492129, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492130, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508492135, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492139, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492143, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492151, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508492160, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492165, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492175, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492179, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492187, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492189, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508492199, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492209, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492210, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492216, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508492225, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492234, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508492238, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492244, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492246, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492247, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492253, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492260, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492267, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508492276, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492278, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492281, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492285, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492292, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492296, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492303, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492306, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508492315, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492323, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492328, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492336, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492340, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492347, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492348, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492352, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492356, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492364, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492368, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492370, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492380, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492384, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492388, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492390, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508492393, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492402, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492409, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492416, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492424, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492425, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508492429, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492432, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492436, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492442, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492451, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492457, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492459, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492465, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508492473, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492481, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492482, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508492483, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492489, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492490, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492493, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492502, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492506, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492508, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508492511, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492516, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492524, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492532, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508492540, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492542, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492547, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492554, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492557, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492559, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492569, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492576, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492577, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492581, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492588, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492598, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492600, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492603, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508492609, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492615, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492616, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492624, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492634, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492643, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492652, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492657, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508492661, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492666, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492674, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492677, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492680, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492687, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508492697, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492698, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492705, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492707, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492714, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492715, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508492717, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492722, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492727, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492733, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492737, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492739, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492740, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492743, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492752, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492760, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492762, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492771, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492776, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492779, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492783, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492786, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508492795, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492799, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492808, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492815, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492816, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492822, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492823, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492828, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492831, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492839, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492845, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492847, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508492857, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492858, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492862, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492863, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492873, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492874, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492878, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508492879, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508492884, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508492892, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492893, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492899, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492902, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492912, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508492913, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492922, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492929, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508492935, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492942, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508492943, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492950, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508492960, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492963, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492965, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508492973, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492980, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492981, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492991, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508492994, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493002, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493005, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493014, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493016, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493020, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493029, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508493038, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493045, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508493055, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493063, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493071, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493074, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493080, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493082, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508493086, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493092, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493100, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493104, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493105, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493112, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508493119, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493122, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493123, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493124, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493127, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493137, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493139, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493140, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493141, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508493151, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493156, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493161, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493162, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508493164, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493166, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493174, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493181, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493182, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493192, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493200, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493204, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493206, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493211, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493217, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508493227, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493233, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493243, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493248, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493249, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493252, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508493253, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493254, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493259, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493263, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493269, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493273, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493275, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493276, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493281, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508493291, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493292, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493299, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493308, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493311, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493316, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493322, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493327, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508493335, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493340, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493344, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493351, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508493360, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493363, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493364, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493367, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493369, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493377, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493379, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508493385, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493388, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493398, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493401, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493411, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508493413, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493415, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493421, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493423, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493427, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493431, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493438, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508493448, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493456, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493465, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493474, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508493483, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493487, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493492, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493497, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493503, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493508, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493515, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508493523, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493530, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493538, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493543, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493552, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493562, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493569, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508493573, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493578, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493586, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493594, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493599, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493609, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493611, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508493618, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493622, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493631, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493638, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493645, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493653, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508493656, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493663, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493665, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493671, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493674, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493684, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508493693, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493701, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493702, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493712, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493721, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508493731, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493733, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493736, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493745, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508493751, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493753, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493757, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493758, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508493759, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508493761, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493767, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493774, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493784, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508493791, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493798, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493804, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493805, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493810, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493818, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493826, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493835, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493841, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493845, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493846, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493855, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493857, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493863, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493872, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508493877, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493880, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493884, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493887, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493891, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508493894, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493898, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493907, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493915, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493922, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493931, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508493935, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493937, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493942, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493949, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493950, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493952, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493955, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493963, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493966, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493971, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493975, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493976, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493983, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493991, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508493994, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508493999, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494001, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508494005, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494014, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508494021, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494027, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494030, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494036, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494041, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494048, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494058, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494063, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494064, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494069, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494079, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494087, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494092, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508494100, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494104, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508494109, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508494115, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494116, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494126, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494131, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494137, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494147, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494149, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494151, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494153, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494159, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508494169, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494173, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494179, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494182, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494185, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494191, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508494199, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494202, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494206, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494214, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508494224, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494232, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494233, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494239, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494246, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494251, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494256, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494260, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494265, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494268, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494272, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494277, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494278, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494279, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494285, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494290, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494294, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494295, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508494305, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494313, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494319, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494321, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494330, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494339, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494344, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494354, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508494359, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494361, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508494369, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494376, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494377, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508494379, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494387, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494389, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494399, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508494408, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494409, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494414, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494416, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494417, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494421, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494428, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494435, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494441, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494442, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508494445, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508494449, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494454, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494464, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494470, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494477, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494479, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494484, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494488, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494495, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508494503, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494512, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494516, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494522, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494529, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508494539, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494540, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494545, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494546, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508494553, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494554, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494556, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508494561, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494571, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494578, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494582, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494588, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494590, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494593, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494603, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494608, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508494610, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494615, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494617, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494618, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494624, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494633, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494638, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494639, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494646, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494656, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494659, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494666, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494670, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494677, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494680, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508494682, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494688, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494696, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494700, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494708, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494717, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494720, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494730, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494736, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494740, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494741, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508494749, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494754, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494757, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494766, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494774, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494782, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494792, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494795, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494802, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494812, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494817, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494824, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494829, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494839, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494843, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508494846, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508494851, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494861, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494862, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494872, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494876, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508494877, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494882, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494888, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494890, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494894, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494896, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494905, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494913, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494918, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494921, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508494925, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494927, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494928, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494934, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508494935, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494938, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494941, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494943, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494952, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494954, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494962, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494965, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494971, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494978, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494981, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494985, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508494991, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495001, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495002, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495007, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495016, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495017, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495025, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495028, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495033, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495034, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508495037, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495046, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495053, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495060, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495067, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495073, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495082, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495085, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495089, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495091, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495093, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495097, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508495107, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495111, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495112, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508495120, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495127, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508495129, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495130, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495139, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495145, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495147, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495156, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508495165, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495168, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495174, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495180, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495182, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508495191, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495198, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495206, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495211, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495221, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508495225, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495227, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495229, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495230, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495233, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495238, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495243, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495252, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495256, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495262, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495271, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495272, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495273, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495276, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495277, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495284, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508495294, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495295, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495300, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495301, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495303, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495310, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495312, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508495315, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495316, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495321, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495325, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495328, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495337, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508495345, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495349, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495350, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495354, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495363, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495365, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495372, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495381, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495383, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495391, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495394, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495402, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495410, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495415, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495416, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495424, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495427, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495433, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508495439, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495448, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495449, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495454, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495457, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495460, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495466, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495471, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495479, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508495483, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495485, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508495489, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495491, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508495497, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495498, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495504, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495512, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495522, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495531, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495541, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495547, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495553, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495557, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495558, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495559, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508495569, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495573, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495575, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495578, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495587, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495589, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495596, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495606, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495612, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495618, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495620, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495629, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495634, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495638, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508495645, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495651, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495652, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495659, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508495666, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495670, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495679, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495681, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508495684, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495694, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495698, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495702, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495710, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495713, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495717, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508495721, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508495727, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495728, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495736, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495738, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495740, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495748, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495757, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495765, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495775, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495780, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495787, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495790, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495795, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495804, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508495812, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495813, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495816, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508495825, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495831, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495839, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495844, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495853, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495862, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495870, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495874, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508495879, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495882, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495884, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495886, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495895, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495898, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495907, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495908, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495910, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495912, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508495914, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495919, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495927, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495934, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508495943, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495948, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508495953, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495961, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495970, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495974, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508495979, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508495985, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508495988, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508495994, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508496004, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496012, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496021, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496024, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496030, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496037, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496046, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496056, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496059, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496061, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496067, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508496070, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508496075, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496076, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496086, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508496090, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496095, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496096, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496097, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508496107, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496115, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508496121, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496127, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496136, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496140, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496146, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496150, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496152, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496153, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508496156, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496159, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496162, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496171, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496176, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496185, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508496195, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496204, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496214, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508496221, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496228, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496236, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496239, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508496248, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496253, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496257, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496264, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496268, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496270, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496274, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496279, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508496285, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496286, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496293, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496299, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496303, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496312, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508496314, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496316, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496317, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496320, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496329, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496334, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508496341, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496344, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496348, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508496350, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496356, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496358, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496368, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508496377, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496382, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496384, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496388, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508496395, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496397, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496404, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496411, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496421, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496428, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496436, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496441, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496449, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508496453, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496460, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496462, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508496467, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496471, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496481, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496483, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508496487, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496492, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508496493, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496496, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508496498, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496506, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496507, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496515, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496520, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496524, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496532, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496536, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496538, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496547, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496555, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496560, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508496567, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496574, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496580, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496586, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496592, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496598, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496608, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496610, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496614, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496619, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496629, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496637, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496641, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496648, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496649, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496653, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496654, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496662, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508496670, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496673, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496678, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496687, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508496689, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496695, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496703, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496706, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496710, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508496720, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496726, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496731, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496741, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496750, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496753, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496762, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496763, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496764, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508496773, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496781, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496787, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496791, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496801, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496807, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508496808, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496811, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508496813, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496816, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496826, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496833, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496841, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496850, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496857, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496866, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496870, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496879, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496883, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496890, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496894, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508496899, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496901, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496905, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496914, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508496921, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496926, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508496931, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496935, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496936, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508496938, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496948, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496951, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496959, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508496969, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496979, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496989, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496995, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508496999, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508497008, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497009, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497017, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497025, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508497028, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497031, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497033, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497036, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497045, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497048, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497054, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497063, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497069, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497073, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497082, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497088, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497095, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497097, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497103, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497110, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508497112, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497117, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497119, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508497129, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497134, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497143, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497146, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497147, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497155, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497157, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508497162, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497164, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497168, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497173, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508497175, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497179, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497182, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497185, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497194, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497201, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497202, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497203, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497206, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497212, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497222, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497226, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497229, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497231, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497239, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497244, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497247, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497250, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497255, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497259, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497267, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497277, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508497283, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497288, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497298, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508497308, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497316, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497323, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497324, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508497327, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497330, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497331, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508497340, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497344, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497354, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508497360, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497365, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497368, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497374, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497380, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497385, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497387, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497395, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497402, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497408, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497415, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497419, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497422, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497423, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497429, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497433, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497437, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508497445, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497450, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497460, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497461, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497462, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497470, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497473, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497477, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497478, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497482, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497488, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497495, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497499, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497502, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497508, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497511, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497514, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497517, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497527, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497536, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497538, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508497546, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497555, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497560, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508497567, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497572, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497580, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497586, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497592, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497599, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497606, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497613, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508497621, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497624, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497626, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508497634, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497641, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497647, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497653, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497659, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497660, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497664, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497667, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497668, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497674, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497678, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497685, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497688, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497697, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497707, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497716, ttl: 9=================
+>>>>> lock success  my-lock, time: 1508497724, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497727, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497731, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497732, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497740, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497750, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497755, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497757, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497767, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497769, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497774, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497780, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497782, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508497786, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497791, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508497795, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497803, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508497813, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497815, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497821, ttl: 6=================
+>>>>> lock success  my-lock, time: 1508497827, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497830, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497832, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497835, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497840, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497841, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497849, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497857, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497859, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497860, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497862, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497868, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497874, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497879, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508497883, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497884, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497887, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497890, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497897, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497900, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497910, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508497920, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497923, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497931, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497935, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497938, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497941, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497947, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497952, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508497954, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497959, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508497962, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508497969, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497971, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497975, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497984, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497990, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508497991, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498000, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498003, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498004, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498006, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498013, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498023, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498033, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498036, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498041, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498043, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508498046, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498053, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508498060, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498065, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498068, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498075, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498077, ttl: 2=================
+>>>>> lock success  my-lock, time: 1508498082, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498087, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498088, ttl: 1=================
+>>>>> lock success  my-lock, time: 1508498090, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498092, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498098, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498105, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498115, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498122, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498129, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498130, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498137, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498145, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498155, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498163, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498165, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498167, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498172, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498182, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498183, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498189, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498198, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498206, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498215, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498225, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498228, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498231, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498237, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498240, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498250, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498252, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498258, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498259, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498263, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498270, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498278, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498283, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498291, ttl: 8=================
+>>>>> lock success  my-lock, time: 1508498300, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498302, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498309, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498317, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498326, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498331, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498337, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498344, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498351, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498355, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498362, ttl: 7=================
+>>>>> lock success  my-lock, time: 1508498370, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498375, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508498383, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498388, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508498397, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498401, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498411, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498416, ttl: 5=================
+>>>>> lock success  my-lock, time: 1508498422, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498424, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498429, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498431, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498438, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498443, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498450, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498453, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508498460, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498465, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498468, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498476, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498480, ttl: 4=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498490, ttl: 10=================
+>>>>> lock success  my-lock, time: 1508498496, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498498, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498502, ttl: 4=================
+>>>>> lock success  my-lock, time: 1508498504, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498505, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498511, ttl: 6=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498513, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498518, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498523, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498530, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498533, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508498542, ttl: 9=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498545, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498546, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498548, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498549, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498557, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498560, ttl: 3=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498562, ttl: 2=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498567, ttl: 5=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498574, ttl: 7=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498584, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498587, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508498595, ttl: 8=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498598, ttl: 3=================
+>>>>> lock success  my-lock, time: 1508498608, ttl: 10=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498609, ttl: 1=================
+>>>>> lock fail  my-lock, error: fail to acquire lock my-lock, time: 1508498614, ttl: 5=================

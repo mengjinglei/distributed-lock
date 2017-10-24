@@ -21,7 +21,14 @@ import (
 )
 
 type DistLock struct {
-	rc *raftNode
+	rc          *raftNode
+	proposeC    chan string
+	confChangeC chan raftpb.ConfChange
+
+	id      int
+	cluster string
+	port    int
+	join    bool
 }
 
 func (dl *DistLock) Lock(key string) error {
@@ -34,17 +41,28 @@ func (dl *DistLock) LockWithTTL(key string, ttl int) error {
 	return dl.rc.LockWithTTL(key, ttl)
 }
 
-func NewDistLock(id, port int, cluster string, join bool) {
+func (dl *DistLock) Unlock(key string) error {
 
-	proposeC := make(chan string)
-	defer close(proposeC)
-	confChangeC := make(chan raftpb.ConfChange)
-	defer close(confChangeC)
+	return dl.rc.Unlock(key)
+}
 
-	// raft provides a commit stream for the proposals from the http api
+func (sl *DistLock) Stop() {
+	close(sl.proposeC)
+	close(sl.confChangeC)
+}
 
-	errorC, rc := newRaftNode(id, strings.Split(cluster, ","), join, proposeC, confChangeC)
+func NewDistLock(id, port int, cluster string, join bool) *DistLock {
 
-	// the key-value http handler will propose updates to raft
-	serveHttpKVAPI(rc.kvStore, port, confChangeC, errorC)
+	dl := &DistLock{
+		proposeC:    make(chan string),
+		confChangeC: make(chan raftpb.ConfChange),
+	}
+
+	go func() {
+		rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
+		dl.rc = rc
+
+	}()
+
+	return dl
 }
