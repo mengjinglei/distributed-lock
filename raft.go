@@ -80,7 +80,7 @@ var defaultSnapCount uint64 = 10000
 // commit channel, followed by a nil message (to indicate the channel is
 // current), then new log entries. To shutdown, close proposeC and read errorC.
 func newRaftNode(id int, peers []string, join bool, proposeC chan string,
-	confChangeC chan raftpb.ConfChange) (<-chan error, *raftNode) {
+	confChangeC chan raftpb.ConfChange) *raftNode {
 
 	commitC := make(chan *string)
 	errorC := make(chan error)
@@ -107,9 +107,8 @@ func newRaftNode(id int, peers []string, join bool, proposeC chan string,
 	go rc.startRaft()
 	go rc.ttlRoutine()
 	rc.kvStore = newKVStore(<-rc.snapshotterReady, proposeC, commitC, errorC)
-	fmt.Println("new >>>>>", rc.kvStore)
 	rc.getSnapshot = func() ([]byte, error) { return rc.kvStore.getSnapshot() }
-	return errorC, rc
+	return rc
 }
 
 func (rc *raftNode) Lock(key string) (err error) {

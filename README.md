@@ -21,7 +21,7 @@ if err != nil{
 }
 
 // acquire a lock with TTL(int, number of Seconds)
-err := distLock.Lock(LockKey, TTL)
+err := distLock.LockWithTTL(LockKey, TTL)
 if err != nil{
     fmt.Println("acquire lock %s fail: %s",LockKey, err.Error())
     return

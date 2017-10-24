@@ -46,13 +46,6 @@ func (dl *DistLock) Unlock(key string) error {
 	return dl.rc.Unlock(key)
 }
 
-func (dl *DistLock) Run(id, port int, cluster string, join bool) {
-	errorC, rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
-	dl.rc = rc
-	// the key-value http handler will propose updates to raft
-	serveHttpKVAPI(rc.kvStore, port, dl.confChangeC, errorC)
-}
-
 func (sl *DistLock) Stop() {
 	close(sl.proposeC)
 	close(sl.confChangeC)
@@ -66,10 +59,9 @@ func NewDistLock(id, port int, cluster string, join bool) *DistLock {
 	}
 
 	go func() {
-		errorC, rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
+		rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
 		dl.rc = rc
-		// the key-value http handler will propose updates to raft
-		serveHttpKVAPI(rc.kvStore, port, dl.confChangeC, errorC)
+
 	}()
 
 	return dl
