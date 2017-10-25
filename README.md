@@ -1,6 +1,6 @@
 # distributed-lock
 
-distributed-lock is an distributed lock written in go by using etcd's [raft library](github.com/coreos/etcd/raft). It provides simple way to use distributed lock.  
+distributed-lock is an distributed lock written in go by using etcd's [raft library](github.com/coreos/etcd/raft). It provides simple way to use distributed lock without an external etcd cluster.  
 
 ## Getting Started
 
@@ -13,8 +13,13 @@ go get github.com/mengjinglei/distributed-lock
 ### Usage
 
 ```
+
+import (
+    distLock "github.com/mengjinglei/distributed-lock"
+)
+
 // Create a distributed lock
-distLock,err := newDistLock(id, port int, peers string, join bool)
+distLock,err := distLock.NewDistLock(id, port int, peers string, join bool)
 if err != nil{
     fmt.Println("Create distributed lock fail: %s",err.Error())
     return
@@ -40,6 +45,9 @@ if err != nil{
     fmt.Println("acquire lock %s fail: %s",LockKey, err.Error())
     return
 }
+
+// check if node is leader
+isLeader := distLock.IsLeader()
 
 // stop a lock
 distLock.Stop()

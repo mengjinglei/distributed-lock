@@ -148,6 +148,10 @@ func (rc *raftNode) Unlock(key string) (err error) {
 	return
 }
 
+func (rc *raftNode) IsLeader() bool {
+	return (rc.node.Status().SoftState.RaftState == raft.StateLeader)
+}
+
 // 用来定期删除过期的值
 func (rc *raftNode) ttlRoutine() {
 	ticker := time.NewTicker(time.Millisecond * 2000)
