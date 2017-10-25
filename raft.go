@@ -15,13 +15,13 @@
 package distlock
 
 import (
+	"context"
 	"fmt"
+	"net/http"
+	"net/url"
 	"os"
 	"strconv"
 	"time"
-
-	"net/http"
-	"net/url"
 
 	log "github.com/Sirupsen/logrus"
 
@@ -34,7 +34,6 @@ import (
 	"github.com/coreos/etcd/snap"
 	"github.com/coreos/etcd/wal"
 	"github.com/coreos/etcd/wal/walpb"
-	"golang.org/x/net/context"
 )
 
 // A key-value stream backed by raft
