@@ -46,6 +46,10 @@ func (dl *DistLock) Unlock(key string) error {
 	return dl.rc.Unlock(key)
 }
 
+func (dl *DistLock) IsLeader() bool {
+	return dl.rc.IsLeader()
+}
+
 func (sl *DistLock) Stop() {
 	close(sl.proposeC)
 	close(sl.confChangeC)
