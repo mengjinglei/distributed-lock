@@ -18,6 +18,7 @@ import (
 	"strings"
 
 	"github.com/coreos/etcd/raft/raftpb"
+	"github.com/ngaut/log"
 )
 
 type DistLock struct {
@@ -42,11 +43,18 @@ func (dl *DistLock) LockWithTTL(key string, ttl int) error {
 }
 
 func (dl *DistLock) Unlock(key string) error {
-
-	return dl.rc.Unlock(key)
+	err := dl.rc.Unlock(key)
+	if err != nil {
+		log.Errorf("Unlock fail %v", err.Error())
+		return err
+	}
+	return err
 }
 
 func (dl *DistLock) IsLeader() bool {
+	if dl == nil || dl.rc == nil {
+		return false
+	}
 	return dl.rc.IsLeader()
 }
 

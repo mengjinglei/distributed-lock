@@ -15,13 +15,14 @@
 package distlock
 
 import (
-	"context"
 	"fmt"
 	"net/http"
 	"net/url"
 	"os"
 	"strconv"
 	"time"
+
+	"golang.org/x/net/context"
 
 	log "github.com/Sirupsen/logrus"
 
@@ -121,10 +122,24 @@ func (rc *raftNode) LockWithTTL(key string, ttl int) (err error) {
 		err = fmt.Errorf("unhealthy cluster")
 		return
 	}
+
 	if _, ok := rc.kvStore.Lookup(key); ok {
 		err = fmt.Errorf("fail to acquire lock %s", key)
 		return
 	} else {
+		// var buf bytes.Buffer
+		// keyv := kv{key, strconv.FormatInt(time.Now().Unix(), 10), strconv.FormatInt(int64(ttl), 10), "store"}
+		// if err := gob.NewEncoder(&buf).Encode(keyv); err != nil {
+		// 	log.Errorf("encode kv %v fail, error: %v", keyv, err)
+		// 	return err
+		// }
+		// log.Println("before rc node propose")
+		// err = rc.node.Propose(context.TODO(), []byte(buf.String()))
+		// log.Println("after rc node propose")
+		// if err != nil {
+		// 	log.Errorf("[lock] propose %v fail, error: %v", buf.String(), err)
+		// 	return err
+		// }
 		rc.kvStore.Propose(key, strconv.FormatInt(time.Now().Unix(), 10), strconv.FormatInt(int64(ttl), 10), "store")
 		return
 	}
@@ -137,23 +152,34 @@ func (rc *raftNode) Unlock(key string) (err error) {
 		err = fmt.Errorf("unhealthy cluster")
 		return
 	}
-	if _, ok := rc.kvStore.Lookup(key); ok {
-		rc.kvStore.Propose(key, "", "", "del")
-		return
-	} else {
-		err = fmt.Errorf("fail to release lock %s, error:%s", key, err.Error())
-		return
-	}
+
+	// var buf bytes.Buffer
+	// keyv := kv{key, "", "", "del"}
+	// if err := gob.NewEncoder(&buf).Encode(keyv); err != nil {
+	// 	log.Errorf("encode kv %v fail, error: %v", keyv, err)
+	// 	return err
+	// }
+	// err = rc.node.Propose(context.TODO(), []byte(buf.String()))
+	// if err != nil {
+	// 	log.Errorf("[unlock] propose %v fail, error: %v", buf.String(), err)
+	// 	return err
+	// }
+
+	rc.kvStore.Propose(key, "", "", "del")
+
 	return
 }
 
 func (rc *raftNode) IsLeader() bool {
-	return (rc.node.Status().SoftState.RaftState == raft.StateLeader)
+	if rc != nil && rc.node != nil {
+		return (rc.node.Status().SoftState.RaftState == raft.StateLeader)
+	}
+	return false
 }
 
 // 用来定期删除过期的值
 func (rc *raftNode) ttlRoutine() {
-	ticker := time.NewTicker(time.Millisecond * 2000)
+	ticker := time.NewTicker(time.Millisecond * 200)
 	defer ticker.Stop()
 
 	for {
@@ -170,6 +196,9 @@ func (rc *raftNode) ttlRoutine() {
 func (rc *raftNode) checkTTL(now time.Time) {
 	rc.kvStore.mu.Lock()
 	defer rc.kvStore.mu.Unlock()
+	if rc == nil || rc.kvStore == nil {
+		return
+	}
 	for k, v := range rc.kvStore.kvStore {
 		last, err := strconv.Atoi(v.Val)
 		if err != nil {
@@ -290,7 +319,7 @@ func (rc *raftNode) openWAL(snapshot *raftpb.Snapshot) *wal.WAL {
 	log.Printf("loading WAL at term %d and index %d", walsnap.Term, walsnap.Index)
 	w, err := wal.Open(rc.waldir, walsnap)
 	if err != nil {
-		log.Fatalf("raftexample: error loading wal (%v)", err)
+		log.Errorf("raftexample: error loading wal (%v)", err)
 	}
 
 	return w
@@ -474,7 +503,7 @@ func (rc *raftNode) serveChannels() {
 					rc.proposeC = nil
 				} else {
 					// blocks until accepted by raft state machine
-					rc.node.Propose(context.TODO(), []byte(prop))
+					err = rc.node.Propose(context.TODO(), []byte(prop))
 				}
 
 			case cc, ok := <-rc.confChangeC:
