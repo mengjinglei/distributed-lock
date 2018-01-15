@@ -15,13 +15,14 @@
 package distlock
 
 import (
-	"context"
 	"fmt"
 	"net/http"
 	"net/url"
 	"os"
 	"strconv"
 	"time"
+
+	"golang.org/x/net/context"
 
 	log "github.com/Sirupsen/logrus"
 
@@ -93,8 +94,8 @@ func newRaftNode(id int, peers []string, join bool, proposeC chan string,
 		id:          id,
 		peers:       peers,
 		join:        join,
-		waldir:      fmt.Sprintf("raftexample-%d", id),
-		snapdir:     fmt.Sprintf("raftexample-%d-snap", id),
+		waldir:      fmt.Sprintf("distlock-%d", id),
+		snapdir:     fmt.Sprintf("distlock-%d-snap", id),
 		snapCount:   defaultSnapCount,
 		stopc:       make(chan struct{}),
 		httpstopc:   make(chan struct{}),
@@ -141,7 +142,7 @@ func (rc *raftNode) Unlock(key string) (err error) {
 		rc.kvStore.Propose(key, "", "", "del")
 		return
 	} else {
-		err = fmt.Errorf("fail to release lock %s, error:%s", key, err.Error())
+		err = fmt.Errorf("fail to release lock %s, error: key not found", key)
 		return
 	}
 	return
@@ -264,7 +265,7 @@ func (rc *raftNode) publishEntries(ents []raftpb.Entry) bool {
 func (rc *raftNode) loadSnapshot() *raftpb.Snapshot {
 	snapshot, err := rc.snapshotter.Load()
 	if err != nil && err != snap.ErrNoSnapshot {
-		log.Fatalf("raftexample: error loading snapshot (%v)", err)
+		log.Fatalf("distlock: error loading snapshot (%v)", err)
 	}
 	return snapshot
 }
@@ -273,12 +274,12 @@ func (rc *raftNode) loadSnapshot() *raftpb.Snapshot {
 func (rc *raftNode) openWAL(snapshot *raftpb.Snapshot) *wal.WAL {
 	if !wal.Exist(rc.waldir) {
 		if err := os.Mkdir(rc.waldir, 0750); err != nil {
-			log.Fatalf("raftexample: cannot create dir for wal (%v)", err)
+			log.Fatalf("distlock: cannot create dir for wal (%v)", err)
 		}
 
 		w, err := wal.Create(rc.waldir, nil)
 		if err != nil {
-			log.Fatalf("raftexample: create wal error (%v)", err)
+			log.Fatalf("distlock: create wal error (%v)", err)
 		}
 		w.Close()
 	}
@@ -290,7 +291,7 @@ func (rc *raftNode) openWAL(snapshot *raftpb.Snapshot) *wal.WAL {
 	log.Printf("loading WAL at term %d and index %d", walsnap.Term, walsnap.Index)
 	w, err := wal.Open(rc.waldir, walsnap)
 	if err != nil {
-		log.Fatalf("raftexample: error loading wal (%v)", err)
+		log.Fatalf("distlock: error loading wal (%v)", err)
 	}
 
 	return w
@@ -303,7 +304,7 @@ func (rc *raftNode) replayWAL() *wal.WAL {
 	w := rc.openWAL(snapshot)
 	_, st, ents, err := w.ReadAll()
 	if err != nil {
-		log.Fatalf("raftexample: failed to read WAL (%v)", err)
+		log.Fatalf("distlock: failed to read WAL (%v)", err)
 	}
 	rc.raftStorage = raft.NewMemoryStorage()
 	if snapshot != nil {
@@ -333,7 +334,7 @@ func (rc *raftNode) writeError(err error) {
 func (rc *raftNode) startRaft() {
 	if !fileutil.Exist(rc.snapdir) {
 		if err := os.Mkdir(rc.snapdir, 0750); err != nil {
-			log.Fatalf("raftexample: cannot create dir for snapshot (%v)", err)
+			log.Fatalf("distlock: cannot create dir for snapshot (%v)", err)
 		}
 	}
 	rc.snapshotter = snap.New(rc.snapdir)
@@ -529,19 +530,19 @@ func (rc *raftNode) serveChannels() {
 func (rc *raftNode) serveRaft() {
 	url, err := url.Parse(rc.peers[rc.id-1])
 	if err != nil {
-		log.Fatalf("raftexample: Failed parsing URL (%v)", err)
+		log.Fatalf("distlock: Failed parsing URL (%v)", err)
 	}
 
 	ln, err := newStoppableListener(url.Host, rc.httpstopc)
 	if err != nil {
-		log.Fatalf("raftexample: Failed to listen rafthttp (%v)", err)
+		log.Fatalf("distlock: Failed to listen rafthttp (%v)", err)
 	}
 
 	err = (&http.Server{Handler: rc.transport.Handler()}).Serve(ln)
 	select {
 	case <-rc.httpstopc:
 	default:
-		log.Fatalf("raftexample: Failed to serve rafthttp (%v)", err)
+		log.Fatalf("distlock: Failed to serve rafthttp (%v)", err)
 	}
 	close(rc.httpdonec)
 }

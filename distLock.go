@@ -15,6 +15,7 @@
 package distlock
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/coreos/etcd/raft/raftpb"
@@ -32,21 +33,30 @@ type DistLock struct {
 }
 
 func (dl *DistLock) Lock(key string) error {
-
+	if dl.rc == nil{
+		return fmt.Errorf("during initialization")
+	}
 	return dl.rc.Lock(key)
 }
 
 func (dl *DistLock) LockWithTTL(key string, ttl int) error {
-
+	if dl.rc == nil{
+		return fmt.Errorf("during initialization")
+	}
 	return dl.rc.LockWithTTL(key, ttl)
 }
 
 func (dl *DistLock) Unlock(key string) error {
-
+	if dl.rc == nil{
+		return fmt.Errorf("during initialization")
+	}
 	return dl.rc.Unlock(key)
 }
 
 func (dl *DistLock) IsLeader() bool {
+	if dl.rc == nil{
+		return false
+	}
 	return dl.rc.IsLeader()
 }
 
@@ -62,11 +72,11 @@ func NewDistLock(id, port int, cluster string, join bool) *DistLock {
 		confChangeC: make(chan raftpb.ConfChange),
 	}
 
-	go func() {
-		rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
-		dl.rc = rc
+	// go func() {
+	rc := newRaftNode(id, strings.Split(cluster, ","), join, dl.proposeC, dl.confChangeC)
+	dl.rc = rc
 
-	}()
+	// }()
 
 	return dl
 }
